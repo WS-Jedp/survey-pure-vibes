@@ -1,0 +1,13 @@
+version: "3.8"
+
+services: 
+    app:
+        build: .
+        volumes: 
+            - .:/home/pure-vibes/survey/
+            - /home/pure-vibes/survey/node_modules/
+            
+        ports: 
+            - "8000:8000"
+
+        command: npm run dev

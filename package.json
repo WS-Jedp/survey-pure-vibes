@@ -1,0 +1,56 @@
+{
+  "name": "survey-pure-vibes",
+  "version": "0.0.0",
+  "description": "Interactive survey for pure vibes to fidn the correct subscription plan for their users",
+  "main": "src/index.jsx",
+  "scripts": {
+    "dev": "webpack serve --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WS-Jedp/survey-pure-vibes.git"
+  },
+  "keywords": [
+    "react",
+    "framer",
+    "motion",
+    "testing",
+    "library",
+    "design",
+    "styled",
+    "components"
+  ],
+  "author": "@WS-Jedp <jedp082@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WS-Jedp/survey-pure-vibes/issues"
+  },
+  "homepage": "https://github.com/WS-Jedp/survey-pure-vibes#readme",
+  "dependencies": {
+    "framer-motion": "^4.1.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.2.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.14.0",
+    "@babel/preset-react": "^7.13.13",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.6",
+    "autoprefixer": "^10.2.5",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "dotenv": "^8.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "jest": "^26.6.3",
+    "webpack": "^5.36.2",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
