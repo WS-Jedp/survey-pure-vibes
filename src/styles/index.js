@@ -10,7 +10,8 @@ export const GlobalStyles = createGlobalStyle`
         --color-dark: #101217;
         --color-light: #E6DFF5;
         --color-bg: #FCE5FF;
-
+        --color-valid: #6DFF8F;
+        --color-error: #FF6D6D;
 
         --space-sm: 6rem;
         --space-md: 12rem;
@@ -43,13 +44,23 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     h1 {
-        font-size: 7.2rem;
+        font-size: 6rem;
+
+        @media (min-width: 720px) {
+            font-size: 7.2rem;
+        }
     }
     h2 {
-        font-size: 6rem;
+        font-size: 5.2rem;
+        @media (min-width: 720px) {
+            font-size: 6rem;
+        }
     }
     h3 {
-        font-size: 3rem;
+        font-size: 2.4rem;
+        @media (min-width: 720px) {
+            font-size: 3rem;
+        }
     }
 
     /* Texts */
@@ -62,4 +73,20 @@ export const GlobalStyles = createGlobalStyle`
         font-weight: 900;
         font-size: 2.1rem;
     }
+
+    /* Form Inputs */
+    input[type="number"] {
+        color: var(--color-dark);
+        border: none;
+        border-bottom: 1px solid rgba(0,0,0,.6);
+        margin: .6rem 0;
+        font-family: 'Noto Sans JP', sans-serif;
+        outline: none;
+        transition: .3s ease-in-out;
+        &:focus {
+            border-bottom: 2px solid var(--color-dark); 
+        }
+    }
+
+    
 `  
