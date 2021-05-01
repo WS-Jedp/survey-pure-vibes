@@ -1,10 +1,11 @@
 import React from 'react'
+import { LayoutSurvey } from '../../layouts/survey'
 
 export const Charity = () => {
 
     return (
-        <section>
+        <LayoutSurvey>
             Hello from Charity
-        </section>
+        </LayoutSurvey>
     )
 }

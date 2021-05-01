@@ -4,7 +4,8 @@
   "description": "Interactive survey for pure vibes to fidn the correct subscription plan for their users",
   "main": "src/index.jsx",
   "scripts": {
-    "dev": "webpack serve --mode development"
+    "dev": "webpack serve --mode development",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
