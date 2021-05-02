@@ -21,6 +21,10 @@ export const SurveyPresentationWrapper = styled(motion.section)`
             width: 100%;
             text-align: center;
             margin-bottom: 1.2rem;
+
+            & p {
+                width: 60%;
+            }
         }
 
         &__content {

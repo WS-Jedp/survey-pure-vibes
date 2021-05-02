@@ -12,4 +12,8 @@ export const ParagraphWrapper = styled(motion.article)`
         font-weight: 700; 
         font-size: 2rem;
     }
+
+    & p {
+        font-size: 1.6rem;
+    }
 `

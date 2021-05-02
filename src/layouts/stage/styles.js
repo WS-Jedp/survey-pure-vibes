@@ -5,7 +5,9 @@ import { motion } from 'framer-motion'
 export const LayoutStageWrapper = styled(motion.section)`
     display: flex;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
     position: relative;
     flex-flow: column nowrap;
     align-items: center;    

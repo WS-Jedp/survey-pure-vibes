@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from '../../components/Button'
 import { SurveyPresentationWrapper } from './styles'
 
-export const SurveyPresentation = ({title, description, btnText = "Continue", children}) => {
+export const SurveyPresentation = ({title, description, btnText = "Continue", action, children}) => {
 
     return (
         <SurveyPresentationWrapper className="survey-presentation">
@@ -26,7 +26,7 @@ export const SurveyPresentation = ({title, description, btnText = "Continue", ch
             </div>
 
             <div className="survey-presentation__button">
-                <Button title={btnText} />
+                <Button title={btnText} action={action}  />
             </div>
         </SurveyPresentationWrapper>
     )

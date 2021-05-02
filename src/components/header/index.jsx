@@ -1,4 +1,5 @@
 import React from 'react'
+import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { Link, useHistory } from 'react-router-dom'
 import { HeaderWrapper } from './styles'
 
@@ -11,6 +12,7 @@ export const Header = ({isHome = false}) => {
             {
                 !isHome && (
                     <Link onClick={() => goBack()}>
+                        <AiOutlineArrowLeft size="20" />
                         Back
                     </Link>   
                 )

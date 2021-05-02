@@ -12,10 +12,10 @@ export const CardParagraphWrapper = styled(motion.article)`
     color: var(--color-dark);
     border-radius: 12px;
     margin: 1rem;
-    padding: 1.6rem;
+    padding: 2.4rem;
     @media (min-width: 720px) {
         margin: 1.2rem;
-        padding: 1.5rem;
+        padding: 4rem;
     }
 
     @media (min-width: 720px) {
@@ -25,18 +25,22 @@ export const CardParagraphWrapper = styled(motion.article)`
     & h3 {
         margin-bottom: .9rem;
         font-weight: 700; 
-        font-size: 1.8rem;
+        font-size: 2rem;
 
         @media(min-width: 720px) {
-            font-size: 2rem;
+            font-size: 2.4rem;
         }
     }
 
-    & p {
+    & p, b {
         font-size: 1.6rem;
 
         @media(min-width: 720px) {
             font-size: 1.8rem;
         }
+    }
+
+    & b {
+        font-weight: 700;
     }
 `

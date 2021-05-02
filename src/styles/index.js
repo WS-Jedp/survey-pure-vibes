@@ -51,9 +51,9 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
     h2 {
-        font-size: 5.2rem;
+        font-size: 3.2rem;
         @media (min-width: 720px) {
-            font-size: 6rem;
+            font-size: 4.2rem;
         }
     }
     h3 {
@@ -62,16 +62,22 @@ export const GlobalStyles = createGlobalStyle`
             font-size: 3rem;
         }
     }
+    h4 {
+        font-size: 2rem;
+        @media (min-width: 720px) {
+            font-size: 2.4rem;
+        }
+    }
 
     /* Texts */
     p, small, a, i, b {
         font-family: 'Noto Sans JP';
         font-weight: 400;
         font-size: 1.8rem;
+        line-height: 2.9rem;
     }
     b {
-        font-weight: 900;
-        font-size: 2.1rem;
+        font-weight: 700;
     }
 
     /* Form Inputs */

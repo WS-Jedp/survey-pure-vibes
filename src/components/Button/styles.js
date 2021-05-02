@@ -14,4 +14,5 @@ export const ButtonWrapper = styled(motion.button)`
     font-size: 1.6rem;
     border: none;
     border-radius: 30px;
+    cursor: pointer;
 `

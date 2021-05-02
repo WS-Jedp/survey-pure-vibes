@@ -13,6 +13,17 @@ export const HeaderWrapper = styled(motion.header)`
     height: 90px;
     padding: 2rem;
 
+    & a {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: center;
+        
+        & svg {
+            margin-right: 1rem;
+        }
+    }
+
     @media (min-width: 760px) {
         flex-flow: row nowrap;
         justify-content: ${(props) => props.isHome ? 'flex-start' : 'space-between'};
