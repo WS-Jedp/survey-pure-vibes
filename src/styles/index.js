@@ -44,10 +44,10 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     h1 {
-        font-size: 6rem;
+        font-size: 4.2rem;
 
         @media (min-width: 720px) {
-            font-size: 7.2rem;
+            font-size: 5.4rem;
         }
     }
     h2 {
