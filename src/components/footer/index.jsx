@@ -2,10 +2,10 @@ import React from 'react'
 import { AiFillInstagram, AiOutlineGlobal } from 'react-icons/ai'
 import { FooterWrapper } from './styles'
 
-export const Footer = () => {
+export const Footer = ({variants = {}}) => {
 
     return (
-        <FooterWrapper>
+        <FooterWrapper variants={variants}>
             <div className="social-media">
                 <a href="">
                     <AiFillInstagram />

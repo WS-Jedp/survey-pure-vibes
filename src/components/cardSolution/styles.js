@@ -16,6 +16,7 @@ export const CardSolutionWrapper = styled(motion.div)`
     color: var(--color-dark);
     border: 2px solid ${props => props.isComplete ? 'var(--color-valid)' : 'rgba(0,0,0,0)'};
     border-radius: 12px;
+    box-shadow: 0 0 9px .6px rgba(0,0,0,0.1);
     @media(min-width: 720px) {
         min-height: 120px;
     }

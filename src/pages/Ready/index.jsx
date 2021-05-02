@@ -4,6 +4,9 @@ import { LayoutSurvey } from '../../layouts/survey'
 import { SurveyPresentation } from '../../containers/surveyPresentation'
 import { ReadyWrapper } from './styles'
 
+import { motion } from 'framer-motion'
+import { leftToRightVariants } from '../../styles/animations'
+
 export const Ready = () => {
 
     const { push } = useHistory()
@@ -13,14 +16,14 @@ export const Ready = () => {
         <LayoutSurvey>
             <SurveyPresentation title="Ready To Make An Impact?" btnText="Let's Go!" action={onBtn}>
                 <ReadyWrapper>
-                    <p>
+                    <motion.p variants={leftToRightVariants} exit={{opacity: 0}}>
                     We ask that you answer some questions to help us create <b>the perfect subscription for our members.</b> 
                     <br />
                     <br />
                     On behalf of the entire Pure Vibes Global team,
                     <b>thank you in advance for your responses</b>
-                    ❤
-                    </p>
+                     ❤
+                    </motion.p>
                 </ReadyWrapper>
             </SurveyPresentation>
         </LayoutSurvey>

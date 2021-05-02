@@ -2,32 +2,35 @@ import React from 'react'
 import { Button } from '../../components/Button'
 import { SurveyPresentationWrapper } from './styles'
 
+import { containerVariants, downToUpVariants, leftToRightVariants, upToDownVariants } from '../../styles/animations'
+import { motion } from 'framer-motion'
+
 export const SurveyPresentation = ({title, description, btnText = "Continue", action, children}) => {
 
     return (
-        <SurveyPresentationWrapper className="survey-presentation">
-            <div className="survey-presentation__title">
-                <h1>
+        <SurveyPresentationWrapper className="survey-presentation" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
+            <motion.div className="survey-presentation__title" >
+                <motion.h1 variants={upToDownVariants}>
                     {title}
-                </h1>
+                </motion.h1>
                 {
                     description && (
-                        <p>
+                        <motion.p variants={upToDownVariants}>
                             {description}
-                        </p>
+                        </motion.p>
                     )
                 }
-            </div>
+            </motion.div>
 
-            <div className="survey-presentation__content">
+            <motion.div variants={containerVariants} className="survey-presentation__content">
                 {
                     children
                 }
-            </div>
+            </motion.div>
 
-            <div className="survey-presentation__button">
-                <Button title={btnText} action={action}  />
-            </div>
+            <motion.div variants={downToUpVariants} className="survey-presentation__button">
+                <Button title={btnText} variants={downToUpVariants} action={action}  />
+            </motion.div>
         </SurveyPresentationWrapper>
     )
 }

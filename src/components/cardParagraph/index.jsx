@@ -1,10 +1,10 @@
 import React from 'react'
 import { CardParagraphWrapper } from './styles'
 
-export const CardParagraph = ({title, content}) => {
+export const CardParagraph = ({title, content, variants = {}}) => {
 
     return (
-        <CardParagraphWrapper>
+        <CardParagraphWrapper variants={variants}>
             <h3>
                 {
                     title

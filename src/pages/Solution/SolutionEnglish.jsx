@@ -4,7 +4,10 @@ import { LayoutSurvey } from '../../layouts/survey'
 import { SurveyPresentation } from '../../containers/surveyPresentation'
 import { SolutionContentWrapper } from './styles'
 
+import { motion } from 'framer-motion'
+
 import { Paragraph } from '../../components/paragraph'
+import { containerVariants, upToDownVariants } from '../../styles/animations'
 
 const ProblemText = () => (<>
 Children in developing/emerging countries are consistently not receiving proper English education, leading to poor English development.<br />
@@ -22,16 +25,18 @@ export const SolutionEnglish = () => {
     return (
         <LayoutSurvey>
             <SurveyPresentation title="Billingual System Project" btnText="Our Solutions" action={onBtn}>
-                <SolutionContentWrapper>
+                <SolutionContentWrapper variants={containerVariants} initial="hidden" animate="visible" >
                     <Paragraph 
                         title="The Problem"
                         content={<ProblemText />}
+                        variants={upToDownVariants}
                     />
                     <Paragraph 
                         title="Our Solution"
                         content={<SolutionText />}
+                        variants={upToDownVariants}
                     />
-                    <iframe src="https://www.youtube.com/embed/PHYu4vqZK24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <motion.iframe variants={upToDownVariants} src="https://www.youtube.com/embed/PHYu4vqZK24" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen />
                 </SolutionContentWrapper>
             </SurveyPresentation>
         </LayoutSurvey>

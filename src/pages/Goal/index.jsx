@@ -3,6 +3,9 @@ import { useHistory } from 'react-router-dom'
 import { LayoutSurvey } from '../../layouts/survey'
 import { SurveyPresentation } from '../../containers/surveyPresentation'
 import { GoalWrapepr } from './styles'
+import { containerVariants, leftToRightVariants, upToDownVariants } from '../../styles/animations'
+
+import { motion } from 'framer-motion'
 
 export const Goal = () => {
 
@@ -12,18 +15,18 @@ export const Goal = () => {
     return (
         <LayoutSurvey>
             <SurveyPresentation title="Our Goal" btnText="Continue" action={onBtn}>
-                <GoalWrapepr>
-                    <h1>
+                <GoalWrapepr variants={containerVariants} initial="hidden" animate="visible">
+                    <motion.h1 variants={upToDownVariants}>
                         2.5 MILLION KIDS FREED FROM GENERATIONAL POVERTY
-                    </h1>
-                    <p>
+                    </motion.h1>
+                    <motion.p variants={upToDownVariants}>
                         Over 500 Million <b>children are living in poverty.</b>  Our goal is to lower that number by .5%.
-                    </p>
+                    </motion.p>
 
-                    <h4>WHICH ONES?</h4>
-                    <p>
+                    <motion.h4 variants={leftToRightVariants}>WHICH ONES?</motion.h4>
+                    <motion.p variants={leftToRightVariants}>
                     We target children who live in <b>low to extremely low economic conditions</b> of our world. Specifically those without the resources to engage in foreign language courses.
-                    </p>
+                    </motion.p>
                 </GoalWrapepr>
             </SurveyPresentation>
         </LayoutSurvey>

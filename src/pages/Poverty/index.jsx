@@ -4,6 +4,8 @@ import { LayoutSurvey } from '../../layouts/survey'
 import { SurveyPresentation } from '../../containers/surveyPresentation'
 import { PovertyContentWrapper } from './styles'
 
+import { containerVariants, leftToRightVariants, upToDownVariants } from '../../styles/animations'
+
 import { CardParagraph } from '../../components/cardParagraph'
 
 const WhatIsPoverty = () => (
@@ -25,14 +27,16 @@ export const Poverty = () => {
     return (
         <LayoutSurvey>
             <SurveyPresentation title="What Are Poverty Cycles?" btnText="Continue" action={onBtn}>
-                <PovertyContentWrapper>
+                <PovertyContentWrapper variants={containerVariants} initial="hidden" animate="visible" exit="exit">
                     <CardParagraph 
                         title="Well, They Are.."
                         content={<WhatIsPoverty />}
+                        variants={leftToRightVariants}
                     />
                     <CardParagraph 
                         title="How To Break Them?"
                         content={<HowToBreakthem />}
+                        variants={leftToRightVariants}
                     />
                 </PovertyContentWrapper>
             </SurveyPresentation>

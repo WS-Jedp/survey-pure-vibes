@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { App } from './routes'
 import { SurveyProvider } from './context/SurveyContext'
 import { GlobalStyles } from './styles'
@@ -18,12 +19,13 @@ i18n.init({
     }
 })
 
-ReactDOM.render((
-    
+ReactDOM.render((    
     <SurveyProvider>
         <I18nextProvider i18n={i18n}>
             <GlobalStyles />
-            <App />
+            <Router>
+                <App />
+            </Router>
         </I18nextProvider>
     </SurveyProvider>
 ), window.document.getElementById('app'))
