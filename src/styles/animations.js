@@ -21,7 +21,10 @@ export const leftToRightVariants = {
     },
     exit: {
         opacity: 0,
-        x: -42
+        x: -42,
+        transition: {
+            ...defaultTransition
+        }
     }
 }
 export const rightToLeftVariants = {
@@ -38,8 +41,11 @@ export const rightToLeftVariants = {
     },
     exit: {
         opacity: 0,
-        x: 42
-    }
+        x: 42,
+        transition: {
+            ...defaultTransition
+        }
+    },
 }
 
 export const upToDownVariants = {
@@ -56,7 +62,10 @@ export const upToDownVariants = {
     },
     exit: {
         opacity: 0,
-        y: -42
+        y: -42,
+        transition: {
+            ...defaultTransition
+        }
     }
 }
 
@@ -74,7 +83,10 @@ export const downToUpVariants = {
     },
     exit: {
         opacity: 0,
-        y: 42
+        y: 42,
+        transition: {
+            ...defaultTransition
+        }
     }
 }
 

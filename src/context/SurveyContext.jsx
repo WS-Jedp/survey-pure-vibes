@@ -3,7 +3,7 @@ import React, { useState, createContext } from 'react'
 
 const initialState = {} 
 
-const SurveyContext = createContext(initialState)
+export const SurveyContext = createContext(initialState)
 
 export const SurveyProvider = ({children}) => {
     

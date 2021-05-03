@@ -3,13 +3,14 @@ import { Route, Switch, Redirect, useLocation  } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 
 import { Home } from '../pages/Home'
-import { Charity } from '../pages/Charity'
 import { Poverty } from '../pages/Poverty'
 import { Solutions } from '../pages/Solutions'
 import { SolutionEnglish } from '../pages/Solution/SolutionEnglish'
 import { SolutionMetorship } from '../pages/Solution/SolutionMentorship'
 import { Goal } from '../pages/Goal'
 import { Ready } from '../pages/Ready'
+import { Manners } from '../pages/Survey/Manners'
+import { Charity } from '../pages/Survey/Charity'
 
 export const App = () => {
 
@@ -21,9 +22,6 @@ export const App = () => {
                 <Switch  location={location} key={location.pathname}>
                     <Route path="/" exact={true}>
                         <Home />
-                    </Route>
-                    <Route path="/charity" exact={true}>
-                        <Charity />
                     </Route>
                     <Route path="/poverty" exact={true}>
                         <Poverty />
@@ -42,6 +40,12 @@ export const App = () => {
                     </Route>
                     <Route path="/ready" exact={true}>
                         <Ready />
+                    </Route>
+                    <Route path="/manners">
+                        <Manners />
+                    </Route>
+                    <Route path="/charity">
+                        <Charity />
                     </Route>
                     <Redirect to="/" />
                 </Switch>

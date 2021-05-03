@@ -94,5 +94,26 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 
+    input[type="text"], input[type="email"], input[type="date"] {
+        width: 80%;
+        height: 42px;
+        border-radius: 21px;
+        color: var(--color-dark);
+        border: 1px solid rgba(0,0,0, .6);
+        margin: .6rem 0;
+        font-family: 'Noto Sans JP', sans-serif;
+        outline: none;
+        transition: .3s ease-in-out;
+        padding: 1.5rem;
+        @media(min-width: 720px) {
+            border-radius: 30px;
+            width: 66%;
+            height: 51px;
+            font-size: 1.8rem;
+            padding: 2rem;
+        }
+
+    }
+
     
 `  

@@ -1,15 +1,15 @@
 import React from 'react'
 import { Button } from '../../components/Button'
-import { SurveyPresentationWrapper } from './styles'
+import { SurveyPresentationFormWrapper } from './styles'
 import { ButtonSubmit } from '../../components/Button/ButtonSubmit'
 
 import { containerVariants, downToUpVariants, leftToRightVariants, upToDownVariants } from '../../styles/animations'
 import { motion } from 'framer-motion'
 
-export const SurveyPresentation = ({title, description, btnText = "Continue", action, submitBtn = false, children}) => {
+export const SurveyPresentationForm = ({title, description, btnText = "Continue", action, submitBtn = true, onSubmit = () => {}, children}) => {
 
     return (
-        <SurveyPresentationWrapper className="survey-presentation" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
+        <SurveyPresentationFormWrapper  onSubmit={onSubmit} className="survey-presentation" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
             <motion.div className="survey-presentation__title" >
                 <motion.h1 variants={upToDownVariants}>
                     {title}
@@ -38,6 +38,6 @@ export const SurveyPresentation = ({title, description, btnText = "Continue", ac
                     )
                 }
             </motion.div>
-        </SurveyPresentationWrapper>
+        </SurveyPresentationFormWrapper>
     )
 }

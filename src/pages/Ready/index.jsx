@@ -10,7 +10,7 @@ import { leftToRightVariants } from '../../styles/animations'
 export const Ready = () => {
 
     const { push } = useHistory()
-    const onBtn = () => push('/survey')
+    const onBtn = () => push('/manners')
 
     return (
         <LayoutSurvey>
