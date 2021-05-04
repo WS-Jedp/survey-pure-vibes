@@ -7,10 +7,7 @@ export const InputOption = ({options = [], title, form = {}, setValue, error}) =
     const [currentValue, setCurrentValue] = useState('')
 
     useEffect(() => {
-
         setValue(currentValue)
-        console.log(currentValue)
-        
     }, [currentValue])
 
 

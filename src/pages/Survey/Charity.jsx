@@ -11,18 +11,25 @@ import { SurveyPresentationForm } from '../../containers/surveyPresentation/Surv
 import { Message } from '../../components/Message'
 import { Textarea } from '../../components/forms/Textarea'
 import { InputOption } from '../../components/forms/InputOption'
+import { InputEmotion } from '../../components/forms/InputEmotion'
 import { InputText } from '../../components/forms/InputText'
 import { Button } from '../../components/Button'
 
+
+const vmentor = [{name: "mentor", value: "Yes"}, {name: "mentor", value: "No"}, {name: "mentor", value: "Maybe"}]
+const emotionSubscription = [{name: 'subEmotion', title: 'Not Feeling It', value: 1}, {name: 'subEmotion', title: '', value: 2}, {name: 'subEmotion', title: 'Normal', value: 3}, {name: 'subEmotion', title: '', value: 4}, {name: 'subEmotion', title: 'Feeling It', value: 5}]
 
 export const Charity = () => {
     const { charity, setCharity } = useContext(SurveyContext)
     const { register: rmuch, handleSubmit: hmuch, formState: {errors: emuch} } = useForm()
     const { register: rmentor, handleSubmit: hmentor, formState: { errors: ementor  } } = useForm()
+    const { register: rsub, handleSubmit: hsub, formState: { errors: esub  } } = useForm()
     const { push } = useHistory()
     const { url, path } = useRouteMatch()
 
-    const [vmentor, setvMentor] = useState('')
+    const [mentorValue, setMentorValue] = useState('')
+    // const [mentorValue, setMentorValue] = useState('')
+
 
     const onSubmitHowMuch = data => {
 
@@ -35,10 +42,9 @@ export const Charity = () => {
     }
 
     const onSubmitMentor = data => {
-
         setCharity(prev => ({
             ...prev,
-            mentor: vmentor
+            mentor: mentorValue
         }))
         push(`${url}/subscription`)
     }
@@ -66,9 +72,9 @@ export const Charity = () => {
                     >
                         <InputOption 
                             title="Would you like the opportunity to become a virtual Mentor?"
-                            options={[{name: "mentor", value: "Yes"}, {name: "mentor", value: "No"}, {name: "mentor", value: "Maybe"}]}
-                            setValue={setvMentor}
+                            options={vmentor}
                             form={{...rmentor("mentor", {required: true})}}
+                            setValue={setMentorValue}
                             error={ementor.mentor}
                         />
                     </SurveyPresentationForm>
@@ -77,7 +83,12 @@ export const Charity = () => {
                 <Route path={`${path}/subscription`}>
                     <SurveyPresentationForm submitBtn title="About Charity" onSubmit={() => {}}>
                         <SurveyWrapper>
-                           
+                            <InputEmotion 
+                                title="How comfortable are you with paying for a subscription that provide children in poor countries hope and opportunities?"
+                                options={emotionSubscription}
+                                form={{...rsub("subEmotion", {required: true})}}
+                                error={esub.mentor}
+                            />
                         </SurveyWrapper>
                     </SurveyPresentationForm>
                 </Route>

@@ -2,10 +2,15 @@ import React from 'react'
 import { AiOutlineMeh, AiOutlineSmile, AiOutlineFrown } from 'react-icons/ai'
 import { FaceWrapper } from './styles'
 
-export const HappyFace = ({title}) => {
+const transition = {
+    duration: .5,
+    ease: [.6, .01, -0.05, .9]
+}
+
+export const HappyFace = ({title, action = () => {}, selected}) => {
 
     return (
-        <FaceWrapper title="happy">
+        <FaceWrapper title="happy" onClick={action} selected={selected} whileHover={{scale: 1.05, transition: transition}}>
             <AiOutlineSmile  />
             {
                 title && (
@@ -19,10 +24,10 @@ export const HappyFace = ({title}) => {
     
 }
 
-export const NeutralFace = ({title}) => {
+export const NeutralFace = ({title, action = () => {}, selected}) => {
 
     return (
-        <FaceWrapper title="neutral">
+        <FaceWrapper title="neutral" onClick={action} selected={selected} whileHover={{scale: 1.05, transition: transition}}>
             <AiOutlineMeh />
             {
                 title && (
@@ -36,10 +41,10 @@ export const NeutralFace = ({title}) => {
     
 }
 
-export const SadFace = ({title}) => {
+export const SadFace = ({title, action = () => {}, selected}) => {
 
     return (
-        <FaceWrapper title="sad">
+        <FaceWrapper title="sad" onClick={action} selected={selected} whileHover={{scale: 1.05, transition: transition}}>
             <AiOutlineFrown />
             {
                 title && (
