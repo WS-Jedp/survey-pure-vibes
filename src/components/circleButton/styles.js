@@ -15,8 +15,10 @@ export const CircleButtonWrapper = styled(motion.button)`
     height: 110px;
     max-height: 110px;
     border-radius: 50%;
+    border: 1px solid ${props => props.selected ? 'var(--color-valid)' : 'rgba(0,0,0,0)'};
     border: none;
-    box-shadow: 0 0 12px .6px rgba(0,0,0,.1);
+    box-shadow: 0 0 12px .6px ${props => props.selected ? 'var(--color-valid)' : 'rgba(0,0,0,.1)'};
+    cursor: pointer;
 
     @media (min-width: 720px) {
         min-width: 140px;

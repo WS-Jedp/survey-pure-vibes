@@ -28,3 +28,24 @@ export const InputTextWrapper = styled(motion.div)`
         font-size: 1.2rem;
     }
 `
+
+export const OptionsWrapper = styled(motion.div)`
+    position: relative;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+
+    & input[type="radio"] {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        display: none;
+    }
+
+    @media(min-width: 720px) {
+        width: 60%;
+    }
+`
