@@ -19,14 +19,14 @@ export const InputOption = ({options = [], title, form = {}, setValue, error}) =
             <OptionsWrapper>
                 {
                     options.map(data => (
-                        <>
-                        <input type="radio" name={data.name} {...form} value={data.value} checked={data.value == currentValue} />
-                        <CircleButton 
-                            title={data.value}
-                            action={() => setCurrentValue(data.value)}
-                            selected={(currentValue == data.value)}
-                        />
-                        </>
+                        <div key={data.value}>
+                            <input type="radio" name={data.name} {...form} value={data.value} checked={data.value == currentValue} />
+                            <CircleButton 
+                                title={data.value}
+                                action={() => setCurrentValue(data.value)}
+                                selected={(currentValue == data.value)}
+                            />
+                        </div>
                     ))
                 }
             </OptionsWrapper>

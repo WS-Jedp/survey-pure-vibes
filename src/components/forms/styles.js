@@ -46,6 +46,27 @@ export const OptionsWrapper = styled(motion.div)`
     }
 
     @media(min-width: 720px) {
-        width: 60%;
+        width: 66%;
+    }
+`
+
+export const OptionsPriceWrapper = styled(motion.div)`
+    position: relative;
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    & input[type="radio"] {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        display: none;
+    }
+
+    @media(min-width: 720px) {
+        width: ${props => props.lg ? '90%' : '66%'};
     }
 `

@@ -16,8 +16,8 @@ export const FaceWrapper = styled(motion.div)`
         fill: ${props => props.selected ? 'var(--color-valid)' : 'var(--color-dark)'};
 
         @media (min-width: 720px) {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
         }
     }
 

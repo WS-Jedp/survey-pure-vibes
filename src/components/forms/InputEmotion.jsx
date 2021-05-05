@@ -10,8 +10,7 @@ export const InputEmotion = ({options = [], title, form = {}, setValue, error}) 
     const [currentValue, setCurrentValue] = useState('')
 
     useEffect(() => {
-
-        
+        setValue(currentValue)
     }, [currentValue])
 
     const DefineFace = ({data}) => {

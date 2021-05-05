@@ -11,8 +11,6 @@ import { Button } from '../../components/Button'
 import { Paragraph } from '../../components/paragraph'
 import { Footer } from '../../components/footer'
 
-
-
 export const Home = () => {
 
     const [isHiddenMain, setIsHiddenMain] = useState(false)
