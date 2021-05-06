@@ -108,7 +108,7 @@ export const Charity = () => {
                                 setValue={setPriceValue}
                                 form={{...rsub("subPrice", {required: true})}}
                                 error={esub.subPrice}
-                                defaultValue={charity.subscription.price ? charity.subscription.price : null}
+                                defaultValue={charity.subscription.price}
                             />
                         </SurveyWrapper>
                     </SurveyPresentationForm>

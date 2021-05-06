@@ -83,12 +83,12 @@ export const Thanks = () => {
             <HomeNavWrapper>
                 <small onClick={() => setIsHiddenMain(false)}>
                     {
-                        !isHiddenMain ? (<b>Thanks</b>) : ('Suggests')
+                        !isHiddenMain ? (<b>Thanks</b>) : ('Thanks')
                     }
                 </small>
                 <small onClick={() => setIsHiddenMain(true)}>
                     {
-                        isHiddenMain ? (<b>Suggests</b>) : ('Thanks')
+                        isHiddenMain ? (<b>Suggests</b>) : ('Suggests')
                     }
                 </small>
             </HomeNavWrapper>

@@ -2,7 +2,7 @@ import React from 'react'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { Link, useHistory } from 'react-router-dom'
 import { HeaderWrapper } from './styles'
-import { containerVariants, leftToRightVariants, upToDownVariants } from '../../styles/animations'
+import { upToDownVariants } from '../../styles/animations'
 import { motion } from 'framer-motion'
 
 export const Header = ({isHome = false}) => {

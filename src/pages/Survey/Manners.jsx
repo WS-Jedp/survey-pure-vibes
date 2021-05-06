@@ -12,6 +12,8 @@ import { Message } from '../../components/Message'
 import { InputText } from '../../components/forms/InputText'
 import { Button } from '../../components/Button'
 
+import { addUser } from '../../db'
+
 
 export const Manners = () => {
 
@@ -30,12 +32,14 @@ export const Manners = () => {
         push(`${url}/hi`)
     }
 
-    const onSubmitUser = data => {
-        setUser(prev => ({
+    const onSubmitUser = async data => {
+        await setUser(prev => ({
             ...prev,
             email: data.email,
             birthdate: data.birth
         }))
+        
+        // await addUser({...user, email: data.email, birthdate: data.birth})
         push(`/charity`)
     }
 
