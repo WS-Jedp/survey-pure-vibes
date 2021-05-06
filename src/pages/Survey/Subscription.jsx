@@ -1,0 +1,160 @@
+import React, { useContext, useEffect, useState } from 'react'
+import { SurveyWrapper, SurveyParagraphsRow } from './styles'
+import { useRouteMatch, useHistory, Switch, Route } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+
+import { SurveyContext } from '../../context/SurveyContext'
+import { FeaturesContext } from '../../context/FeaturesContext'
+
+import { LayoutSurvey } from '../../layouts/survey'
+import { SurveyPresentation } from '../../containers/surveyPresentation'
+import { Paragraph } from '../../components/paragraph'
+import { FeatureParagraph } from '../../components/featureParagraph'
+import { SurveyPresentationForm } from '../../containers/surveyPresentation/SurveyPresentationForm'
+import { FeaturesMembership } from '../../containers/featuresMembership'
+import { Message } from '../../components/Message'
+
+import { InputOption } from '../../components/forms/InputOption'
+import { Textarea } from '../../components/forms/Textarea'
+
+import { favoriteFeatures } from '../../tools/responses'
+
+
+import { TexMembershiptWhy, TextCreativeCreatures, TextImpactIntiator, TextMembershipAdvantages, TextMembershipVision, TextTravelTripsters } from '../../tools/texts'
+
+export const Subscription = () => {
+    
+    const { charity, impactInitiator, user, setFavoriteFeature } = useContext(SurveyContext)
+    const { allVisited } = useContext(FeaturesContext)
+
+    const [fav, setFav] = useState({})
+
+    const submitFav = data => {
+        setFavoriteFeature(prev => ({
+            ...prev,
+            name: fav,
+            why: data.why
+        }))
+        push(`${url}/how-it-works`)
+    }
+
+
+    const { register: rfav, handleSubmit: hfav, formState: {errors: efav} } = useForm()
+    
+    const { push } = useHistory()
+    const { url, path } = useRouteMatch()
+
+    useEffect(() => {
+        console.log("charity-------",charity, "---------charity")
+        console.log("impact-------",impactInitiator, "---------impact")
+        console.log("user-------",user, "---------user")
+    }, [])
+
+
+    return (
+        <LayoutSurvey>
+            <Switch>
+                <Route path={path} exact>
+                    <SurveyPresentation title="About Membership Features" action={() => push(`${url}/features`)}>
+                        <SurveyParagraphsRow>
+                            <Paragraph 
+                                title="Advantages"
+                                content={<TextMembershipAdvantages />}
+                            />
+                            <Paragraph 
+                                title="Why?"
+                                content={<TexMembershiptWhy />}
+                            />
+                            <Paragraph 
+                                title="Vision"
+                                content={<TextMembershipVision />}
+                            />
+                        </SurveyParagraphsRow>
+                    </SurveyPresentation>
+                </Route>
+
+                <Route path={`${path}/features`}>
+                    <SurveyPresentation 
+                        title="Membership Features"
+                        disabled={!allVisited}
+                        action={() => push(`${path}/favorite`)}
+                    >
+                        <FeaturesMembership />
+                    </SurveyPresentation>
+                </Route>
+
+                {/* --------------- FAVORITE --------------- */}
+                <Route path={`${path}/favorite`}>
+                    <SurveyPresentationForm 
+                        submitBtn
+                        title="About Membership Features"
+                        onSubmit={hfav(submitFav)}
+                    >
+                        <SurveyWrapper>
+                            <InputOption 
+                                title="What Feature Service do you like the most and why?"
+                                form={{...rfav("fav", { required: true })}}
+                                error={efav.fav}
+                                setValue={setFav}
+                                options={favoriteFeatures}
+                            />
+                            <Textarea 
+                                title="Why do you like the most this service?"
+                                placeholder="Write your opinion"
+                                form={{...rfav("why", {required: true})}}
+                                error={efav.why}
+                            />
+                        </SurveyWrapper>
+                    </SurveyPresentationForm>
+                </Route>
+
+                <Route path={`${path}/how-it-works`}>
+                    <SurveyPresentation
+                        title=""
+                        action={() => push('/transparency')}
+                        btnText="Go!"
+                    >
+                        <Message>
+                            Perfect {user.name}! Lastly, let us show you how we plan to allocate Subscription funds.  
+                        </Message>
+                    </SurveyPresentation>
+                </Route>
+
+                {/* --------------- FEATURES --------------- */}
+                <Route path={`${path}/impact-initiator`}>
+                    <SurveyPresentation 
+                        title="Impact Initiator" 
+                        action={() => push("/impact-initiator")}
+                    >
+                        <FeatureParagraph 
+                            content={<TextImpactIntiator />}
+                        />
+                    </SurveyPresentation>
+                </Route>
+
+                <Route path={`${path}/creative-creatures`}>
+                    <SurveyPresentation 
+                        title="Creative Creatures" 
+                        action={() => push("/creative-creatures")}
+                    >
+                        <FeatureParagraph 
+                            content={<TextCreativeCreatures />}
+                        />
+                    </SurveyPresentation>
+                </Route>
+
+                <Route path={`${path}/travel-tripsters`}>
+                    <SurveyPresentation 
+                        title="Travel Tripsters" 
+                        action={() => push("/travel-tripsters")}
+                    >
+                        <FeatureParagraph 
+                            content={<TextTravelTripsters />}
+                        />
+                    </SurveyPresentation>
+                </Route>
+                
+            </Switch>
+        </LayoutSurvey>
+    )
+}

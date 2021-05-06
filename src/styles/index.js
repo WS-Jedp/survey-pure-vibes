@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
 
         --color-dark: #101217;
         --color-light: #E6DFF5;
+        --color-gray: #707070;
         --color-bg: #FCE5FF;
         --color-valid: #6DFF8F;
         --color-error: #FF6D6D;

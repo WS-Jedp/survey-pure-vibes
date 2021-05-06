@@ -17,4 +17,9 @@ export const ButtonWrapper = styled(motion.button)`
     border: none;
     border-radius: 30px;
     cursor: pointer;
+
+    &:disabled {
+        opacity: .3;
+        background-color: var(--color-gray);
+    }
 `

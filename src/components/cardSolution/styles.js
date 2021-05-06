@@ -22,7 +22,7 @@ export const CardSolutionWrapper = styled(motion.div)`
     }
 
     @media (min-width: 720px) {
-        min-width: 360px;
+        min-width: ${props => props.sm ? '270px' : '360px'};
     }
 
     & h3 {

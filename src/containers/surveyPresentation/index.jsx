@@ -3,10 +3,10 @@ import { Button } from '../../components/Button'
 import { SurveyPresentationWrapper } from './styles'
 import { ButtonSubmit } from '../../components/Button/ButtonSubmit'
 
-import { containerVariants, downToUpVariants, leftToRightVariants, upToDownVariants } from '../../styles/animations'
+import { containerVariants, downToUpVariants, upToDownVariants } from '../../styles/animations'
 import { motion } from 'framer-motion'
 
-export const SurveyPresentation = ({title, description, btnText = "Continue", action, submitBtn = false, children}) => {
+export const SurveyPresentation = ({title, description, btnText = "Continue", action, submitBtn = false, children, disabled = false}) => {
 
     return (
         <SurveyPresentationWrapper className="survey-presentation" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
@@ -34,7 +34,7 @@ export const SurveyPresentation = ({title, description, btnText = "Continue", ac
                     submitBtn ? (
                         <ButtonSubmit title={btnText} variants={downToUpVariants}  />
                     ) : (
-                        <Button title={btnText} variants={downToUpVariants} action={action}  />
+                        <Button title={btnText} variants={downToUpVariants} action={action} disabled={disabled} />
                     )
                 }
             </motion.div>

@@ -16,12 +16,7 @@ import { InputSubPrice } from '../../components/forms/InputSubPrice'
 import { InputText } from '../../components/forms/InputText'
 import { Button } from '../../components/Button'
 
-
-const vmentor = [{name: "mentor", value: "Yes"}, {name: "mentor", value: "No"}, {name: "mentor", value: "Maybe"}]
-
-const emotionSubscription = [{name: 'subEmotion', title: 'Not Feeling It', value: 1}, {name: 'subEmotion', title: '', value: 2}, {name: 'subEmotion', title: 'Normal', value: 3}, {name: 'subEmotion', title: '', value: 4}, {name: 'subEmotion', title: 'Feeling It', value: 5}]
-
-const pricesSubscription = [{value: "7.95$", description: "26 Cents per day"}, {value: "9.99$", description: "33 Cents per day"}, {value: "12.95$", description: "43 Cents per day"}]
+import { emotionSubscription, pricesSubscription, vmentor } from '../../tools/responses'
 
 export const Charity = () => {
     const { charity, setCharity } = useContext(SurveyContext)
@@ -62,7 +57,7 @@ export const Charity = () => {
                 price: priceValue
             },
         }))
-        console.log(charity)
+        push(`${url}/next-step`)
     }
 
     return (
@@ -115,6 +110,13 @@ export const Charity = () => {
                             />
                         </SurveyWrapper>
                     </SurveyPresentationForm>
+                </Route>
+                <Route path={`${path}/next-step`}>
+                    <SurveyPresentation title="" action={() => push('/subscription')} >
+                        <Message>
+                            Now let’s talk about what you would want your subscription to look like?
+                        </Message>
+                    </SurveyPresentation>
                 </Route>
             </Switch>
         </LayoutSurvey>

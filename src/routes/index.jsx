@@ -11,6 +11,10 @@ import { Goal } from '../pages/Goal'
 import { Ready } from '../pages/Ready'
 import { Manners } from '../pages/Survey/Manners'
 import { Charity } from '../pages/Survey/Charity'
+import { Subscription } from '../pages/Survey/Subscription'
+import { ImpactInitiator } from '../pages/Survey/ImpactInitiator'
+import { CreativeCreatures } from '../pages/Survey/CreativeCreatures'
+import { TravelTripsters } from '../pages/Survey/TravelTripsters'
 
 export const App = () => {
 
@@ -46,6 +50,18 @@ export const App = () => {
                     </Route>
                     <Route path="/charity">
                         <Charity />
+                    </Route>
+                    <Route path="/subscription">
+                        <Subscription />
+                    </Route>
+                    <Route path="/impact-initiator">
+                        <ImpactInitiator />
+                    </Route>
+                    <Route path="/creative-creatures">
+                        <CreativeCreatures />
+                    </Route>
+                    <Route path="/travel-tripsters">
+                        <TravelTripsters />
                     </Route>
                     <Redirect to="/" />
                 </Switch>

@@ -11,10 +11,10 @@ const animate = {
     boxShadow: '0, 0, 9px 1px rgba(0,0,0,.1)'
 }
 
-export const Button = ({title, action, variants = {}}) => {
+export const Button = ({title, action, variants = {}, disabled = false}) => {
 
     return (
-        <ButtonWrapper variants={variants} onClick={action && action} whileHover={{scale: 1.05, transition: transition}} >
+        <ButtonWrapper disabled={disabled} variants={variants} onClick={action && action} whileHover={{scale: 1.05, transition: transition}} >
             { title }
         </ButtonWrapper>
     )

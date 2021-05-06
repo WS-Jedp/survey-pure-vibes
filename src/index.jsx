@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { App } from './routes'
 import { SurveyProvider } from './context/SurveyContext'
+import { FeaturesProvider } from './context/FeaturesContext'
 import { GlobalStyles } from './styles'
 import i18n from 'i18next'
 import { I18nextProvider } from 'react-i18next'
@@ -21,11 +22,13 @@ i18n.init({
 
 ReactDOM.render((    
     <SurveyProvider>
-        <I18nextProvider i18n={i18n}>
-            <GlobalStyles />
-            <Router>
-                <App />
-            </Router>
-        </I18nextProvider>
+        <FeaturesProvider>
+            <I18nextProvider i18n={i18n}>
+                <GlobalStyles />
+                <Router>
+                    <App />
+                </Router>
+            </I18nextProvider>
+        </FeaturesProvider>
     </SurveyProvider>
 ), window.document.getElementById('app'))
