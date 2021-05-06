@@ -20,7 +20,7 @@ export const CreativeCreatures = () => {
     const [prob, setProb] = useState(0)
     const [price, setPrice] = useState(0)
 
-    const { setCreativeCreatures } = useContext(SurveyContext)
+    const { setCreativeCreatures, creativeCreatures } = useContext(SurveyContext)
     const { setIsVisitedCC } = useContext(FeaturesContext)
 
     const { register: rfeel, handleSubmit: hfeel, formState: {errors: efeel} } = useForm()
@@ -70,6 +70,7 @@ export const CreativeCreatures = () => {
                             form={ {...rfeel("feeling", { required: true })} }
                             setValue={setFeeling}
                             error={efeel.feeling}
+                            defaultValue={creativeCreatures.feeling}
                         />
                     </SurveyPresentation>
                 </Route>
@@ -85,6 +86,7 @@ export const CreativeCreatures = () => {
                             form={ {...rprob("probability", { required: true })} }
                             setValue={setProb}
                             error={eprob.probability}
+                            defaultValue={creativeCreatures.probability}
                         />
                     </SurveyPresentation>
                 </Route>
@@ -100,6 +102,7 @@ export const CreativeCreatures = () => {
                             form={{...rprice("price", {required: true})}}
                             error={eprice.price}
                             setValue={setPrice}
+                            defaultValue={creativeCreatures.price}
                         />
                     </SurveyPresentation>
                 </Route>         

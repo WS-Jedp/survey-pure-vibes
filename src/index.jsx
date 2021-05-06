@@ -5,30 +5,24 @@ import { App } from './routes'
 import { SurveyProvider } from './context/SurveyContext'
 import { FeaturesProvider } from './context/FeaturesContext'
 import { GlobalStyles } from './styles'
-import i18n from 'i18next'
-import { I18nextProvider } from 'react-i18next'
-import { global_en } from './translations/en/global'
+import firebase from 'firebase'
 
+const { API_KEY, AUTH_DOMAIN, PROJECT_ID, APP_ID } = process.env
 
-i18n.init({
-    interpolation: { escapeValue: true },
-    lng: 'en',
-    resources: {
-        en: {
-            global: global_en
-        }
-    }
-})
+firebase.initializeApp({
+    apiKey: API_KEY,
+    authDomain: AUTH_DOMAIN,
+    projectId: PROJECT_ID,
+    appId: APP_ID
+  })
 
 ReactDOM.render((    
     <SurveyProvider>
         <FeaturesProvider>
-            <I18nextProvider i18n={i18n}>
-                <GlobalStyles />
-                <Router>
-                    <App />
-                </Router>
-            </I18nextProvider>
+            <GlobalStyles />
+            <Router>
+                <App />
+            </Router>
         </FeaturesProvider>
     </SurveyProvider>
 ), window.document.getElementById('app'))

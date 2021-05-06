@@ -20,7 +20,7 @@ export const TravelTripsters = () => {
     const [prob, setProb] = useState(0)
     const [price, setPrice] = useState(0)
 
-    const { setTravelTripsters } = useContext(SurveyContext)
+    const { setTravelTripsters, travelTripsters } = useContext(SurveyContext)
     const { setIsVisitedTT } = useContext(FeaturesContext)
 
     const { register: rfeel, handleSubmit: hfeel, formState: {errors: efeel} } = useForm()
@@ -70,6 +70,7 @@ export const TravelTripsters = () => {
                             form={ {...rfeel("feeling", { required: true })} }
                             setValue={setFeeling}
                             error={efeel.feeling}
+                            defaultValue={travelTripsters.feeling}
                         />
                     </SurveyPresentation>
                 </Route>
@@ -85,6 +86,7 @@ export const TravelTripsters = () => {
                             form={ {...rprob("probability", { required: true })} }
                             setValue={setProb}
                             error={eprob.probability}
+                            defaultValue={travelTripsters.probability}
                         />
                     </SurveyPresentation>
                 </Route>
@@ -100,6 +102,7 @@ export const TravelTripsters = () => {
                             form={{...rprice("price", {required: true})}}
                             error={eprice.price}
                             setValue={setPrice}
+                            defaultValue={travelTripsters.price}
                         />
                     </SurveyPresentation>
                 </Route>         

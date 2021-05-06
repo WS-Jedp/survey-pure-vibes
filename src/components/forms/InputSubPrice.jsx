@@ -3,9 +3,9 @@ import { InputPrice } from '../inputPrice'
 import { CardPrice } from '../cardPrice'
 import { InputTextWrapper, OptionsPriceWrapper } from './styles'
 
-export const InputSubPrice = ({options = [], title, form = {}, setValue, error}) => {
+export const InputSubPrice = ({options = [], title, form = {}, setValue, error, defaultValue = ""}) => {
 
-    const [currentValue, setCurrentValue] = useState('')
+    const [currentValue, setCurrentValue] = useState(defaultValue)
     const [personalValue, setPersonalValue] = useState(null)
 
     useEffect(() => {

@@ -15,6 +15,8 @@ import { Subscription } from '../pages/Survey/Subscription'
 import { ImpactInitiator } from '../pages/Survey/ImpactInitiator'
 import { CreativeCreatures } from '../pages/Survey/CreativeCreatures'
 import { TravelTripsters } from '../pages/Survey/TravelTripsters'
+import { Transparency } from '../pages/Survey/Transparency'
+import { Thanks } from '../pages/Thanks'
 
 export const App = () => {
 
@@ -62,6 +64,12 @@ export const App = () => {
                     </Route>
                     <Route path="/travel-tripsters">
                         <TravelTripsters />
+                    </Route>
+                    <Route path="/transparency">
+                        <Transparency />
+                    </Route>
+                    <Route path="/thanks">
+                        <Thanks />
                     </Route>
                     <Redirect to="/" />
                 </Switch>

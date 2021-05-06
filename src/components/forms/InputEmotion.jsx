@@ -5,9 +5,9 @@ import { InputTextWrapper, OptionsWrapper } from './styles'
 
 
 
-export const InputEmotion = ({options = [], title, form = {}, setValue, error}) => {
+export const InputEmotion = ({options = [], title, form = {}, setValue, error, defaultValue = ""}) => {
 
-    const [currentValue, setCurrentValue] = useState('')
+    const [currentValue, setCurrentValue] = useState(defaultValue)
 
     useEffect(() => {
         setValue(currentValue)

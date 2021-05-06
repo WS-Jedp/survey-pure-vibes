@@ -160,5 +160,11 @@ export const GlobalStyles = createGlobalStyle`
         }
     }
 
+    .link {
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
     
 `  

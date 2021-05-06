@@ -24,7 +24,7 @@ import { TexMembershiptWhy, TextCreativeCreatures, TextImpactIntiator, TextMembe
 
 export const Subscription = () => {
     
-    const { charity, impactInitiator, user, setFavoriteFeature } = useContext(SurveyContext)
+    const { charity, impactInitiator, user, setFavoriteFeature, favoriteFeature } = useContext(SurveyContext)
     const { allVisited } = useContext(FeaturesContext)
 
     const [fav, setFav] = useState({})
@@ -43,13 +43,6 @@ export const Subscription = () => {
     
     const { push } = useHistory()
     const { url, path } = useRouteMatch()
-
-    useEffect(() => {
-        console.log("charity-------",charity, "---------charity")
-        console.log("impact-------",impactInitiator, "---------impact")
-        console.log("user-------",user, "---------user")
-    }, [])
-
 
     return (
         <LayoutSurvey>
@@ -97,12 +90,14 @@ export const Subscription = () => {
                                 error={efav.fav}
                                 setValue={setFav}
                                 options={favoriteFeatures}
+                                defaultValue={favoriteFeature.name}
                             />
                             <Textarea 
                                 title="Why do you like the most this service?"
                                 placeholder="Write your opinion"
                                 form={{...rfav("why", {required: true})}}
                                 error={efav.why}
+                                defaultValue={favoriteFeature.why}
                             />
                         </SurveyWrapper>
                     </SurveyPresentationForm>

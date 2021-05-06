@@ -7,6 +7,11 @@ export const SmallParagraphWrapper = styled(motion.div)`
     justify-content: center;
     align-items: ${props => props.isCenter ? 'center' : 'flex-start'};
     text-align: center;
+    margin: 1rem;
+    
+    @media (min-width: 720px) {
+        max-width: 180px;
+    }
 
     & b {
         margin-bottom: .3rem;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { InputTextWrapper } from './styles'
 
-export const Textarea = ({title, placeholder, variants, error, form = {}}) => {
+export const Textarea = ({title, placeholder, variants, defaultValue = "", error, form = {}}) => {
 
     return (
         <InputTextWrapper isError={error}>
@@ -13,6 +13,7 @@ export const Textarea = ({title, placeholder, variants, error, form = {}}) => {
                 id={`input-textarea-${title}`} 
                 cols="30" rows="10" 
                 placeholder={placeholder}
+                defaultValue={defaultValue ? defaultValue : null}
                 {...form}
             />
             {

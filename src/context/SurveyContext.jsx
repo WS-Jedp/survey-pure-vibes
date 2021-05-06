@@ -7,8 +7,8 @@ export const SurveyContext = createContext(initialState)
 
 export const SurveyProvider = ({children}) => {
     
-    const [user, setUser] = useState({name: 'friend'})
-    const [charity, setCharity] = useState({})
+    const [user, setUser] = useState({})
+    const [charity, setCharity] = useState({howMuch: '', subscription: {}, mentor: ''})
     const [impactInitiator, setImpactInitiator] = useState({})
     const [creativeCreatures, setCreativeCreatures] = useState({})
     const [travelTripsters, setTravelTripsters] = useState({})

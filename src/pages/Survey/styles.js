@@ -26,3 +26,29 @@ export const SurveyParagraphsRow = styled(motion.section)`
         }
     }
 `
+
+export const SurveyTransparency = styled(motion.article)`
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    text-align: center;
+    margin: auto;
+
+    @media (min-width: 720px) {
+        width: 60%;
+    }
+`
+
+export const SurveyTransparencyParagraphs = styled(motion.div)`
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1rem;
+    padding: 2rem;
+`

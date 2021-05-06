@@ -1,0 +1,6 @@
+{
+    "hosting": {
+      "site": "pure-vibes-global-survey",
+      "public": "dist"
+    }
+  }

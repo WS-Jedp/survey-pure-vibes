@@ -14,7 +14,9 @@ import { Button } from '../../components/Button'
 
 
 export const Manners = () => {
+
     const { user, setUser } = useContext(SurveyContext)
+
     const { register: rname, handleSubmit: hname, formState: {errors: ename} } = useForm()
     const { register: ruser, handleSubmit: huser, formState: { errors: euser  } } = useForm()
     const { push } = useHistory()
@@ -42,7 +44,13 @@ export const Manners = () => {
             <Switch>
                 <Route path={path} exact>
                     <SurveyPresentationForm onSubmit={hname(onSubmitName)} submitBtn title="Manners First">
-                            <InputText title="What is your first name?" placeholder="Write your name" error={ename.fname} form={{...rname("fname", {required: true})}}/>
+                            <InputText 
+                                title="What is your first name?" 
+                                placeholder="Write your name" 
+                                error={ename.fname} 
+                                form={{...rname("fname", {required: true})}}
+                                defaultValue={user.name}
+                            />
                     </SurveyPresentationForm>
                 </Route>
 
@@ -62,6 +70,7 @@ export const Manners = () => {
                                 placeholder="Write your email" 
                                 type="email" 
                                 form={{...ruser('email', { required: true })}}
+                                defaultValue={user.email}
                             />
                             <h3>&</h3>
                             <InputText 
@@ -69,6 +78,7 @@ export const Manners = () => {
                                 placeholder="dd/mm/yyyy" 
                                 type="date" 
                                 form={{...ruser('birth', { required: true })}}
+                                defaultValue={user.birthdate}
                             />
                         </SurveyWrapper>
                     </SurveyPresentationForm>

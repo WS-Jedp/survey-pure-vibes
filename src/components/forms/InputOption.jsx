@@ -2,9 +2,9 @@ import React, { useState, useRef, useEffect } from 'react'
 import { CircleButton } from '../circleButton'
 import { InputTextWrapper, OptionsWrapper } from './styles'
 
-export const InputOption = ({options = [], title, form = {}, setValue, error}) => {
+export const InputOption = ({options = [], title, form = {}, setValue, error, defaultValue = ""}) => {
 
-    const [currentValue, setCurrentValue] = useState('')
+    const [currentValue, setCurrentValue] = useState(defaultValue)
 
     useEffect(() => {
         setValue(currentValue)

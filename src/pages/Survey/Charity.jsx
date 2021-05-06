@@ -13,8 +13,6 @@ import { Textarea } from '../../components/forms/Textarea'
 import { InputOption } from '../../components/forms/InputOption'
 import { InputEmotion } from '../../components/forms/InputEmotion'
 import { InputSubPrice } from '../../components/forms/InputSubPrice'
-import { InputText } from '../../components/forms/InputText'
-import { Button } from '../../components/Button'
 
 import { emotionSubscription, pricesSubscription, vmentor } from '../../tools/responses'
 
@@ -70,6 +68,7 @@ export const Charity = () => {
                             placeholder="Write your answer"
                             form={{ ...rmuch("howMuch", {required: true}) }}
                             error={emuch.howMuch}
+                            defaultValue={charity.howMuch}
                         />
                     </SurveyPresentationForm>
                 </Route>
@@ -87,6 +86,7 @@ export const Charity = () => {
                             form={{...rmentor("mentor", {required: true})}}
                             setValue={setMentorValue}
                             error={ementor.mentor}
+                            defaultValue={charity.mentor}
                         />
                     </SurveyPresentationForm>
                 </Route>
@@ -100,6 +100,7 @@ export const Charity = () => {
                                 form={{...rsub("subEmotion", {required: true})}}
                                 setValue={setEmotionValue}
                                 error={esub.subEmotion}
+                                defaultValue={charity.subscription.emotion ? charity.subscription.emotion : ""}
                             />
                             <InputSubPrice 
                                 title="How much would you pay monthly?"
@@ -107,6 +108,7 @@ export const Charity = () => {
                                 setValue={setPriceValue}
                                 form={{...rsub("subPrice", {required: true})}}
                                 error={esub.subPrice}
+                                defaultValue={charity.subscription.price ? charity.subscription.price : null}
                             />
                         </SurveyWrapper>
                     </SurveyPresentationForm>

@@ -20,7 +20,7 @@ export const ImpactInitiator = () => {
     const [prob, setProb] = useState(0)
     const [price, setPrice] = useState(0)
 
-    const { setImpactInitiator } = useContext(SurveyContext)
+    const { setImpactInitiator, impactInitiator } = useContext(SurveyContext)
     const { setIsVisitedII} = useContext(FeaturesContext)
 
     const { register: rfeel, handleSubmit: hfeel, formState: {errors: efeel} } = useForm()
@@ -70,6 +70,7 @@ export const ImpactInitiator = () => {
                             form={ {...rfeel("feeling", { required: true })} }
                             setValue={setFeeling}
                             error={efeel.feeling}
+                            defaultValue={impactInitiator.feeling}
                         />
                     </SurveyPresentation>
                 </Route>
@@ -85,6 +86,7 @@ export const ImpactInitiator = () => {
                             form={ {...rprob("probability", { required: true })} }
                             setValue={setProb}
                             error={eprob.probability}
+                            defaultValue={impactInitiator.probability}
                         />
                     </SurveyPresentation>
                 </Route>
@@ -100,6 +102,7 @@ export const ImpactInitiator = () => {
                             form={{...rprice("price", {required: true})}}
                             error={eprice.price}
                             setValue={setPrice}
+                            defaultValue={impactInitiator.price}
                         />
                     </SurveyPresentation>
                 </Route>         
