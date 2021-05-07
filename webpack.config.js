@@ -39,7 +39,8 @@ module.exports = {
         new HTMLWebpackPlugin({
             inject: true,
             template: path.resolve(__dirname, 'public', 'index.html'),
-            filename: 'index.html'
+            filename: 'index.html',
+            favicon: './public/pure-vibes-logo.jpg'
         }),
         new Dotenv()
     ]

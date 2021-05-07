@@ -19,9 +19,11 @@ export const Header = ({isHome = false}) => {
                     </Link>   
                 )
             }
-            <motion.b variants={upToDownVariants}>
-                Pure Vibes Global
-            </motion.b>
+            <Link to="/">
+                <motion.b variants={upToDownVariants}>
+                    Pure Vibes Global
+                </motion.b>
+            </Link>
         </HeaderWrapper>
     )
 }

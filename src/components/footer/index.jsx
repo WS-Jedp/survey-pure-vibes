@@ -7,10 +7,10 @@ export const Footer = ({variants = {}}) => {
     return (
         <FooterWrapper variants={variants}>
             <div className="social-media">
-                <a href="">
+                <a href="https://www.instagram.com/purevibesglobal/?hl=es" target="_blank">
                     <AiFillInstagram />
                 </a>
-                <a href="">
+                <a href="https://www.purevibesglobal.com/" target="_blank">
                     <AiOutlineGlobal />
                 </a>
             </div>

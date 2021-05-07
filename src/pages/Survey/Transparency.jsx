@@ -24,7 +24,7 @@ export const Transparency = () => {
 
     const onSubmitTransparency = data => {
         setTransparency(isFair)
-        push("/thanks")
+        push("/saving")
     }
 
     return (

@@ -1,25 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { HomeWrapper, IntroductionWrapper, InformationWrapper, HomeNavWrapper } from './styles'
 import { LayoutStage } from '../../layouts/stage'
 
+import { SurveyContext } from '../../context/SurveyContext'
+import { addReview } from '../../db'
+
 import { motion } from 'framer-motion'
 import { leftToRightVariants, containerVariants, smoothTransision, upToDownVariants, rightToLeftVariants } from '../../styles/animations'
 
 import { Footer } from '../../components/footer'
-import { Textarea } from '../../components/forms/Textarea'
 import { ButtonSubmit } from '../../components/Button/ButtonSubmit'
+import { Loading } from '../../components/loading'
 
 export const Thanks = () => {
+
+    const { user } = useContext(SurveyContext)
 
     const { register, formState: { errors }, handleSubmit  } = useForm()
 
     const [isHiddenMain, setIsHiddenMain] = useState(false)
-    const { push } = useHistory() 
 
-    const submitOpinion = data => {
-        push('/')
+    const [isLoading, setIsLoading] = useState(false)
+    const [isReviewed, setIsReviewed] = useState(false)
+
+    const submitOpinion = async data => {
+        const review = {
+            user: { name: "Juanes", email: "jedp082@gmail.com" },
+            review: data.opinion
+        }
+        setIsLoading(true)
+        await addReview(review)
+        setIsLoading(false)
+        setIsReviewed(true)
     }
 
     return (
@@ -35,7 +49,7 @@ export const Thanks = () => {
                         </motion.p>
                         <motion.p  variants={leftToRightVariants}>
                             Are curious to see what we are up to? <br />  
-                            Visit our Instagram Page <a className="link" href="https://www.instagram.com/purevibesglobal/">@purevibesglobal</a> <br />
+                            Visit our Instagram Page <a className="link" target="_blank" href="https://www.instagram.com/purevibesglobal/">@purevibesglobal</a> <br />
                         </motion.p>
                     </div>
 
@@ -61,7 +75,7 @@ export const Thanks = () => {
                             Any  Comments, Concerns, or suggestions you may have would be greatly appreciated. Again, Thank you!
                         </label>
                         <textarea 
-                            form={{...register("opinion", { required: true })}} 
+                            {...register("opinion", { required: true })} 
                             placeholder="Write your opinion (Optional)"
                             id="opinion"
                         />
@@ -73,9 +87,18 @@ export const Thanks = () => {
                             )
                         }
                         
-                        <ButtonSubmit 
-                            title="Send"
-                        />
+                        {
+                            isLoading ? (<Loading message="Adding Your Feedback 😁" />) : 
+                                isReviewed ? (
+                                    <small style={{color: "var(--color-dark)"}}>
+                                        Thanks For Your Feedback! 💘
+                                    </small>
+                                ) : (
+                                    <ButtonSubmit 
+                                        title="Send"
+                                    />
+                                )
+                        }
                     </motion.form>
                     <Footer variants={rightToLeftVariants} />
                 </InformationWrapper>

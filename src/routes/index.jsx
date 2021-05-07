@@ -17,6 +17,7 @@ import { CreativeCreatures } from '../pages/Survey/CreativeCreatures'
 import { TravelTripsters } from '../pages/Survey/TravelTripsters'
 import { Transparency } from '../pages/Survey/Transparency'
 import { Thanks } from '../pages/Thanks'
+import { LoadingPage } from '../pages/Loading'
 
 export const App = () => {
 
@@ -67,6 +68,9 @@ export const App = () => {
                     </Route>
                     <Route path="/transparency">
                         <Transparency />
+                    </Route>
+                    <Route path="/saving">
+                        <LoadingPage />
                     </Route>
                     <Route path="/thanks">
                         <Thanks />

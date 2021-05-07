@@ -14,6 +14,7 @@ export const SurveyProvider = ({children}) => {
     const [travelTripsters, setTravelTripsters] = useState({})
     const [favoriteFeature, setFavoriteFeature] = useState({})
     const [transparency, setTransparency] = useState('')
+    const [review, setReview] = useState('')
     
     const state = {
         user,

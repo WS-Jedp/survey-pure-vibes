@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { HappyFace, NeutralFace, SadFace } from '../icons/faces'
-import { InputTextWrapper, OptionsWrapper } from './styles'
+import React, { useState, useEffect } from 'react'
+import { HappyFace, NeutralFace, SadFace, NoneFace, RelaxFace} from '../icons/faces'
+import { InputTextWrapper, FacesWrapper } from './styles'
 
 
 
@@ -18,11 +18,19 @@ export const InputEmotion = ({options = [], title, form = {}, setValue, error, d
         switch (data.value) {
             case 1:
                 return (
-                    <SadFace title={data.title} action={() => setCurrentValue(data.value)} selected={(currentValue == data.value)} />
+                    <NoneFace title={data.title} action={() => setCurrentValue(data.value)} selected={(currentValue == data.value)} />
+                )
+            case 2:
+                return (
+                    <SadFace title={data.title} action={() => setCurrentValue(data.value)} selected={(currentValue == data.value)}/>
                 )
             case 3:
                 return (
                     <NeutralFace title={data.title} action={() => setCurrentValue(data.value)} selected={(currentValue == data.value)}/>
+                )
+            case 4:
+                return (
+                    <RelaxFace title={data.title} action={() => setCurrentValue(data.value)} selected={(currentValue == data.value)}/>
                 )
             case 5:
                 return (
@@ -40,7 +48,7 @@ export const InputEmotion = ({options = [], title, form = {}, setValue, error, d
             <label htmlFor={`input-textarea-${title}`}>
                 {title}
             </label>
-            <OptionsWrapper>
+            <FacesWrapper>
                 {
                     options.map(data => (
                         <>
@@ -49,7 +57,7 @@ export const InputEmotion = ({options = [], title, form = {}, setValue, error, d
                         </>
                     ))
                 }
-            </OptionsWrapper>
+            </FacesWrapper>
 
             {
                 error && (

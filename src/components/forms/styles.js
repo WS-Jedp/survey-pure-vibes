@@ -38,6 +38,8 @@ export const OptionsWrapper = styled(motion.div)`
     justify-content: space-around;
     align-items: center;
 
+    
+
     & input[type="radio"] {
         width: 0;
         height: 0;
@@ -47,6 +49,36 @@ export const OptionsWrapper = styled(motion.div)`
 
     @media(min-width: 720px) {
         width: 66%;
+    }
+`
+export const FacesWrapper = styled(motion.div)`
+    position: relative;
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    & b {
+        display: none;
+    }
+
+    & input[type="radio"] {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        display: none;
+    }
+
+    @media(min-width: 720px) {
+        width: 66%;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+        & b {
+            display: block;
+        }
     }
 `
 
