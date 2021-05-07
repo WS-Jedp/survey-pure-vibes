@@ -1,5 +1,6 @@
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
+const WorkboxPlugin = require('workbox-webpack-plugin');
 const path = require('path')
 
 module.exports = {
@@ -40,8 +41,12 @@ module.exports = {
             inject: true,
             template: path.resolve(__dirname, 'public', 'index.html'),
             filename: 'index.html',
-            favicon: './public/pure-vibes-logo.jpg'
+            favicon: './public/favicon.jpg'
         }),
-        new Dotenv()
+        new Dotenv(),
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true,
+          }),
     ]
 }

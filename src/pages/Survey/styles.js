@@ -20,7 +20,7 @@ export const SurveyParagraphsRow = styled(motion.section)`
 
 
     & article {
-        @media (min-width: 720px) {
+        @media (min-width: 1080px) {
             max-width: 300px;
             margin: 0 3rem;
         }

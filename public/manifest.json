@@ -1,0 +1,15 @@
+{
+    "short_name": "Survey - Pure Vibes",
+    "name": "Pure Vibes Global - Survey",
+    "icons": [
+      {
+        "src": "./images/favicon.jpg",
+        "sizes": "64x64",
+        "type": "image/jpg"
+      }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#101217",
+    "background_color": "#FCE5FF"
+  }

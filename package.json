@@ -5,7 +5,7 @@
   "main": "src/index.jsx",
   "scripts": {
     "dev": "webpack serve --mode development",
-    "test": "jest"
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -50,6 +50,7 @@
     "autoprefixer": "^10.2.5",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.1.1",
     "dotenv": "^8.2.0",
     "dotenv-webpack": "^7.0.2",
     "file-loader": "^6.2.0",
@@ -58,6 +59,7 @@
     "json-loader": "^0.5.7",
     "webpack": "^5.36.2",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "workbox-webpack-plugin": "^6.1.5"
   }
 }

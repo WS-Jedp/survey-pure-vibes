@@ -1,6 +1,16 @@
 {
-    "hosting": {
-      "site": "pure-vibes-global-survey",
-      "public": "dist"
-    }
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
+}

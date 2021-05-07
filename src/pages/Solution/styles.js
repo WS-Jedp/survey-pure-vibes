@@ -12,7 +12,7 @@ export const SolutionContentWrapper = styled(motion.section)`
 
 
     & article {
-        @media (min-width: 720px) {
+        @media (min-width: 1080px) {
             max-width: 300px;
             margin: 0 3rem;
         }
@@ -20,7 +20,7 @@ export const SolutionContentWrapper = styled(motion.section)`
 
     & iframe {
         margin: 3rem;
-        @media (min-width: 720px) {
+        @media (min-width: 1080px) {
             width: 30%;
             height: 240px;
             margin: 0  3rem;
