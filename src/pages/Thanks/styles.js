@@ -6,16 +6,15 @@ export const HomeWrapper = styled(motion.section)`
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    max-height: 110vh;
 `
 
 export const HomeNavWrapper = styled(motion.nav)`
-    position: absolute;
+    position: sticky;
     width: 100%;
-    height: 90px;
+    height: 60px;
     bottom: 0;
     left: 0;
     display: flex;
@@ -25,7 +24,7 @@ export const HomeNavWrapper = styled(motion.nav)`
     background-color: white;
     box-shadow: 0 0 9px 1px rgba(0,0,0, .1);
 
-    @media (min-width: 720px) {
+    @media (min-width: 1080px) {
         display: none;
     }
 `
@@ -36,7 +35,7 @@ export const IntroductionWrapper = styled(motion.div)`
     flex-flow: column nowrap;
     align-items: flex-start;
     width: ${props => props.isHidden ? '0%' : '100%'};
-    height: ${props => props.isHidden ? '0%' : '100%'};
+    height: ${props => props.isHidden ? '0%' : 'auto'};
     overflow: hidden;
     text-align: left;
     padding: ${props => props.isHidden ? '0' : '1.5rem'};
@@ -92,7 +91,7 @@ export const IntroductionWrapper = styled(motion.div)`
 export const InformationWrapper = styled(motion.div)`
     position: relative;
     width: ${props => props.isHidden ? '100%' : '0%'};
-    height: ${props => props.isHidden ? '100%' : '0%'};
+    height: ${props => props.isHidden ? 'auto' : '0%'};
     display: flex;
     flex-flow: column nowrap;
     align-items: flex-start;
