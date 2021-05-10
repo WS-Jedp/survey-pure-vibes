@@ -32,4 +32,12 @@ export const FeatureContainerWrapper = styled(motion.section)`
             margin-bottom: 2rem;
         }
     }
+
+    & .msg-complete {
+        color: var(--color-error);
+        width: 90%;
+        text-align: center;
+        margin: auto;
+        font-size: 1.2rem;
+    }
 `

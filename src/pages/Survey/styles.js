@@ -40,6 +40,10 @@ export const SurveyTransparency = styled(motion.article)`
 
     @media (min-width: 720px) {
         width: 60%;
+        & p,b {
+            font-size: 1.9rem;
+            line-height: 3rem;
+        }
     }
 `
 

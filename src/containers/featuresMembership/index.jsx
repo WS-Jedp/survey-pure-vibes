@@ -5,7 +5,7 @@ import { CardSolution } from '../../components/cardSolution'
 
 import { FeaturesProvider, FeaturesContext } from '../../context/FeaturesContext'
 
-export const FeaturesMembership = () => {
+export const FeaturesMembership = ({ msgCompleteFeatures }) => {
 
     const { url } = useRouteMatch()
     
@@ -42,6 +42,14 @@ export const FeaturesMembership = () => {
                         sm
                     />
                 </FeatureMembershipWrapper>
+
+                {
+                    msgCompleteFeatures && (
+                        <small className="msg-complete">
+                            Complete all the features' questions to continue 
+                        </small>
+                    )
+                }
             </FeatureContainerWrapper>
         </FeaturesProvider>
     )

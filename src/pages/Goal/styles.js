@@ -16,7 +16,7 @@ export const GoalWrapepr = styled(motion.article)`
         width: 70%;
     }
 
-    & h1, h4, p {
+    & h1, h4, h3, p {
         margin-bottom: 1rem;
     } 
 `

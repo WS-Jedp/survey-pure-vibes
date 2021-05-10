@@ -17,9 +17,11 @@ export const SmallParagraphWrapper = styled(motion.div)`
         margin-bottom: .3rem;
         font-weight: 600; 
         font-size: 1.8rem;
+
     }
 
     & p {
         font-size: 1.6rem;
+        
     }
 `

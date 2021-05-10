@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react'
-import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { HomeWrapper, IntroductionWrapper, InformationWrapper, HomeNavWrapper } from './styles'
 import { LayoutStage } from '../../layouts/stage'
@@ -40,7 +39,7 @@ export const Thanks = () => {
         <LayoutStage>
             <HomeWrapper>
                 <IntroductionWrapper isHidden={isHiddenMain} variants={containerVariants} transition={smoothTransision}  initial="hidden" animate="visible" exit="exit" >
-                    <div>
+                    <div className="thanks-paragraph">
                         <motion.h1 variants={leftToRightVariants} >
                             THANK YOU SO MUCH!
                         </motion.h1>
@@ -71,12 +70,10 @@ export const Thanks = () => {
 
                 <InformationWrapper isHidden={isHiddenMain} variants={containerVariants} initial="hidden" animate="visible" exit="exit">
                     <motion.form variants={leftToRightVariants} onSubmit={handleSubmit(submitOpinion)}>
-                        <label htmlFor="opinion">
-                            Any  Comments, Concerns, or suggestions you may have would be greatly appreciated. Again, Thank you!
-                        </label>
+                        
                         <textarea 
                             {...register("opinion", { required: true })} 
-                            placeholder="Write your opinion (Optional)"
+                            placeholder="Any  Comments, Concerns, or suggestions you may have would be greatly appreciated. Again, Thank you!"
                             id="opinion"
                         />
                         {

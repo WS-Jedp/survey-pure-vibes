@@ -14,8 +14,11 @@ export const Goal = () => {
 
     return (
         <LayoutSurvey>
-            <SurveyPresentation title="Our Goal" btnText="Continue" action={onBtn}>
+            <SurveyPresentation title="" btnText="Continue" action={onBtn}>
                 <GoalWrapepr variants={containerVariants} initial="hidden" animate="visible">
+                    <motion.h2>
+                        OUR GOAL
+                    </motion.h2>
                     <motion.h1 variants={upToDownVariants}>
                         2.5 MILLION KIDS FREED FROM GENERATIONAL POVERTY
                     </motion.h1>
@@ -23,7 +26,7 @@ export const Goal = () => {
                         Over 500 Million <b>children are living in poverty.</b>  Our goal is to lower that number by .5%.
                     </motion.p>
 
-                    <motion.h4 variants={leftToRightVariants}>WHICH ONES?</motion.h4>
+                    <motion.h2 variants={leftToRightVariants}>WHICH ONES?</motion.h2>
                     <motion.p variants={leftToRightVariants}>
                     We target children who live in <b>low to extremely low economic conditions</b> of our world. Specifically those without the resources to engage in foreign language courses.
                     </motion.p>
