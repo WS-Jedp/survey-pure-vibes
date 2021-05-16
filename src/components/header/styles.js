@@ -13,6 +13,10 @@ export const HeaderWrapper = styled(motion.header)`
     height: 90px;
     padding: 2rem;
 
+    @media (min-width: 1080px) {
+        padding: 2rem 9rem;
+    }
+
     & a {
         display: flex;
         flex-flow: row nowrap;

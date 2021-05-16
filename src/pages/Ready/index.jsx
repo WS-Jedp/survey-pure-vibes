@@ -14,8 +14,11 @@ export const Ready = () => {
 
     return (
         <LayoutSurvey>
-            <SurveyPresentation title="Ready To Make An Impact?" btnText="Let's Go!" action={onBtn}>
+            <SurveyPresentation title="" btnText="Let's Go!" action={onBtn}>
                 <ReadyWrapper>
+                    <motion.h1 variants={leftToRightVariants}>
+                        Ready To Make An Impact?
+                    </motion.h1>
                     <motion.p variants={leftToRightVariants} exit={{opacity: 0}}>
                     We ask that you answer some questions to help us create <b>the perfect subscription for our members.</b> 
                     <br />

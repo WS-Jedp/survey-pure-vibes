@@ -21,11 +21,18 @@ import { favoriteFeatures } from '../../tools/responses'
 
 
 import { TexMembershiptWhy, TextCreativeCreatures, TextImpactIntiator, TextMembershipAdvantages, TextMembershipVision, TextTravelTripsters } from '../../tools/texts'
+import { motion } from 'framer-motion'
 
 export const Subscription = () => {
     
-    const { charity, impactInitiator, user, setFavoriteFeature, favoriteFeature } = useContext(SurveyContext)
+    const { user, setFavoriteFeature, favoriteFeature } = useContext(SurveyContext)
     const { allVisited } = useContext(FeaturesContext)
+    
+    const [ showMsgFeatures, setShowMsgFeatures ] = useState(false)
+
+    useEffect(() => {
+        setShowMsgFeatures(false)
+    }, [])
 
     const [fav, setFav] = useState({})
 
@@ -36,6 +43,16 @@ export const Subscription = () => {
             why: data.why
         }))
         push(`${url}/how-it-works`)
+    }
+
+    const onContinue = () => {
+
+        if(!allVisited) {
+            return setShowMsgFeatures(true)
+        }
+
+        push(`${path}/favorite`)
+
     }
 
 
@@ -68,11 +85,12 @@ export const Subscription = () => {
 
                 <Route path={`${path}/features`}>
                     <SurveyPresentation 
-                        title="Membership Features"
+                        // title="Membership Features"
+                        title=""
                         disabled={!allVisited}
-                        action={() => push(`${path}/favorite`)}
+                        action={() => onContinue()}
                     >
-                        <FeaturesMembership />
+                        <FeaturesMembership  msgCompleteFeatures={showMsgFeatures} />
                     </SurveyPresentation>
                 </Route>
 
@@ -118,10 +136,11 @@ export const Subscription = () => {
                 {/* --------------- FEATURES --------------- */}
                 <Route path={`${path}/impact-initiator`}>
                     <SurveyPresentation 
-                        title="Impact Initiator" 
+                        title="" 
                         action={() => push("/impact-initiator")}
                     >
                         <FeatureParagraph 
+                            title="Impact Initiator"
                             content={<TextImpactIntiator />}
                         />
                     </SurveyPresentation>
@@ -129,10 +148,10 @@ export const Subscription = () => {
 
                 <Route path={`${path}/creative-creatures`}>
                     <SurveyPresentation 
-                        title="Creative Creatures" 
                         action={() => push("/creative-creatures")}
                     >
                         <FeatureParagraph 
+                            title="Creative Creatures"
                             content={<TextCreativeCreatures />}
                         />
                     </SurveyPresentation>
@@ -140,10 +159,10 @@ export const Subscription = () => {
 
                 <Route path={`${path}/travel-tripsters`}>
                     <SurveyPresentation 
-                        title="Travel Tripsters" 
                         action={() => push("/travel-tripsters")}
                     >
                         <FeatureParagraph 
+                            title="Travel Tripsters"
                             content={<TextTravelTripsters />}
                         />
                     </SurveyPresentation>

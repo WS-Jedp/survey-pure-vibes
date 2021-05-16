@@ -14,7 +14,7 @@ const animate = {
 export const Button = ({title, action, variants = {}, disabled = false}) => {
 
     return (
-        <ButtonWrapper disabled={disabled} variants={variants} onClick={action && action} whileHover={{scale: 1.05, transition: transition}} >
+        <ButtonWrapper isDisabled={disabled} variants={variants} onClick={action && action} whileHover={{scale: 1.05, transition: transition}} >
             { title }
         </ButtonWrapper>
     )

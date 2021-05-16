@@ -11,6 +11,10 @@ export const ReadyWrapper = styled(motion.div)`
     text-align: center;
     margin: auto;
 
+    & h1 {
+        margin-bottom: 2rem;
+    }
+
     @media (min-width: 720px) {
         width: 60%;
         & p,b  {

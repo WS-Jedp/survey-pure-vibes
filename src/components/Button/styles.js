@@ -18,8 +18,8 @@ export const ButtonWrapper = styled(motion.button)`
     border-radius: 30px;
     cursor: pointer;
 
-    &:disabled {
-        opacity: .3;
-        background-color: var(--color-gray);
-    }
+    ${props => props.isDisabled && (
+        "opacity: .2; background-color: var(--color-gray);"
+    )}    
+    
 `

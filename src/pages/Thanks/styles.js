@@ -40,17 +40,21 @@ export const IntroductionWrapper = styled(motion.div)`
     text-align: left;
     padding: ${props => props.isHidden ? '0' : '1.5rem'};
 
+    @media (min-width: 1080px) {
+        & .thanks-paragraph {
+            margin: 2rem 0;
+        }
+    }
+
     & p {
             margin: 1rem 0;
             font-size: 2rem;
         }
 
     @media (min-width: 720px) {
-        min-height: 80vh;
         align-items: flex-start;
-        justify-content: space-evenly;
         & p {
-            margin: 1rem 0;
+            /* margin: 1rem 0; */
             font-size: 2.2rem;
         }
     }
@@ -77,15 +81,6 @@ export const IntroductionWrapper = styled(motion.div)`
         margin-bottom: 1rem;
     }
 
-    & iframe {
-        margin: 2rem;
-        width: 80%;
-
-        @media(min-width: 1080px) {
-            width: 72%;
-            height: 210px;
-        }
-    }
 `
 
 export const InformationWrapper = styled(motion.div)`
@@ -101,7 +96,7 @@ export const InformationWrapper = styled(motion.div)`
     overflow: hidden;
 
     @media (min-width: 720px) {
-        min-height: 80vh;
+        min-height: 82vh;
         justify-content: flex-end;
 
         & p {

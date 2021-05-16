@@ -14,9 +14,16 @@ export const GoalWrapepr = styled(motion.article)`
 
     @media(min-width:720px) {
         width: 70%;
+
+        & p {
+            width: 81%;
+        }
+        & p, b {
+            font-size: 2.3rem;
+        }
     }
 
-    & h1, h4, p {
+    & h1, h4, h3, p {
         margin-bottom: 1rem;
     } 
 `
