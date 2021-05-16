@@ -22,6 +22,11 @@ export const FeatureContainerWrapper = styled(motion.section)`
     justify-content: center;
     align-items: center;
 
+    & h1 {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
     & p {
         width: 90%;
         text-align: center;

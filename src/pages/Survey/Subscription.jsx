@@ -21,6 +21,7 @@ import { favoriteFeatures } from '../../tools/responses'
 
 
 import { TexMembershiptWhy, TextCreativeCreatures, TextImpactIntiator, TextMembershipAdvantages, TextMembershipVision, TextTravelTripsters } from '../../tools/texts'
+import { motion } from 'framer-motion'
 
 export const Subscription = () => {
     
@@ -84,7 +85,8 @@ export const Subscription = () => {
 
                 <Route path={`${path}/features`}>
                     <SurveyPresentation 
-                        title="Membership Features"
+                        // title="Membership Features"
+                        title=""
                         disabled={!allVisited}
                         action={() => onContinue()}
                     >

@@ -14,6 +14,9 @@ export const FeaturesMembership = ({ msgCompleteFeatures }) => {
     return (
         <FeaturesProvider>
             <FeatureContainerWrapper>
+                <h1>
+                    Membership Features
+                </h1>
                 <p>
                     Select one of the membership features to discover more about the benefits
                 </p>
