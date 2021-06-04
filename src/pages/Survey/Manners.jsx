@@ -76,7 +76,7 @@ export const Manners = () => {
                                 form={{...ruser('email', { required: true })}}
                                 defaultValue={user.email}
                             />
-                            <h3>&</h3>
+                            {/* <h3>&</h3> */}
                             <InputText 
                                 title="When is your birthdate?" 
                                 placeholder="dd/mm/yyyy" 
