@@ -25,7 +25,7 @@ export const Ready = () => {
                     <br />
                     On behalf of the entire Pure Vibes Global team,
                     <b>thank you in advance for your responses</b>
-                     ❤
+                     <br />😄
                     </motion.p>
                 </ReadyWrapper>
             </SurveyPresentation>

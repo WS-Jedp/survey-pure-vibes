@@ -35,7 +35,8 @@ export const OptionsWrapper = styled(motion.div)`
     height: auto;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    /* justify-content: space-around; */
+    justify-content: center;
     align-items: center;
 
     
