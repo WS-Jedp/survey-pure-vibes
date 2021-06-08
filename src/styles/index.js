@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;700&display=swap');
 
     :root {
         font-size: 62.5%;
@@ -26,6 +24,7 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
         list-style: none;
         text-decoration: none;
+        font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
     }
 
     a {
@@ -34,7 +33,6 @@ export const GlobalStyles = createGlobalStyle`
 
     body {
         font-size: 1.8rem;
-        font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
         color: var(--color-dark);
     }
 
