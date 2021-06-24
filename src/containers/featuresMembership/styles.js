@@ -22,6 +22,11 @@ export const FeatureContainerWrapper = styled(motion.section)`
     justify-content: center;
     align-items: center;
 
+    & h1 {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
     & p {
         width: 90%;
         text-align: center;
@@ -31,5 +36,13 @@ export const FeatureContainerWrapper = styled(motion.section)`
             font-size: 2.4rem;
             margin-bottom: 2rem;
         }
+    }
+
+    & .msg-complete {
+        color: var(--color-error);
+        width: 90%;
+        text-align: center;
+        margin: auto;
+        font-size: 1.2rem;
     }
 `

@@ -20,10 +20,23 @@ export const SurveyPresentationWrapper = styled(motion.section)`
             justify-content: center;
             width: 100%;
             text-align: center;
-            margin-bottom: 1.2rem;
+
 
             & p {
-                width: 60%;
+                width: 90%;
+                margin: .7rem 0;
+            }
+
+
+            @media (min-width: 1080px) {
+                & p {
+                    width: 60%;
+                    padding: 1rem;
+                }
+
+                & p, b {
+                    font-size: 1.9rem;
+                }
             }
         }
 
@@ -40,6 +53,7 @@ export const SurveyPresentationWrapper = styled(motion.section)`
             flex-flow: row nowrap;
             align-items: center;
             justify-content: center;
+            margin: 1rem 0;            
         }
     }
 `
@@ -66,6 +80,11 @@ export const SurveyPresentationFormWrapper = styled(motion.form)`
 
             & p {
                 width: 60%;
+                padding: 1rem;
+            }
+
+            & p, b {
+                font-size: 2rem;
             }
         }
 

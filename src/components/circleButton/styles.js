@@ -20,6 +20,7 @@ export const CircleButtonWrapper = styled(motion.button)`
     box-shadow: 0 0 12px .6px ${props => props.selected ? 'var(--color-valid)' : 'rgba(0,0,0,.1)'};
     cursor: pointer;
     padding: .6rem;
+    margin: 2rem;
 
     @media (min-width: 720px) {
         min-width: 140px;

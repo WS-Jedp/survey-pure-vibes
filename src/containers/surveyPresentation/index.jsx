@@ -9,7 +9,7 @@ import { motion } from 'framer-motion'
 export const SurveyPresentation = ({title, description, btnText = "Continue", action, submitBtn = false, children, disabled = false}) => {
 
     return (
-        <SurveyPresentationWrapper className="survey-presentation" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
+        <SurveyPresentationWrapper disabled={disabled} className="survey-presentation" variants={containerVariants} initial="hidden" animate="visible" exit="exit">
             <motion.div className="survey-presentation__title" >
                 <motion.h1 variants={upToDownVariants}>
                     {title}
