@@ -44,9 +44,9 @@ module.exports = {
             favicon: './public/favicon.jpg'
         }),
         new Dotenv(),
-        // new WorkboxPlugin.GenerateSW({
-        //     clientsClaim: true,
-        //     skipWaiting: true,
-        //   }),
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true,
+          }),
     ]
 }
